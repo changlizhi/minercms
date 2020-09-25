@@ -5,19 +5,14 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"minercms/gongjus"
+	"minercms/service"
 	"net/http"
 	"os"
 
 	jsoniter "github.com/json-iterator/go"
 )
 
-func canShuTiShi(canShu string) []byte {
-	json := jsoniter.ConfigCompatibleWithStandardLibrary
-	ret, _ := json.Marshal(map[string]interface{}{
-		"TiShi": canShu,
-	})
-	return ret
-}
 func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")             //允许访问所有域
 	w.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
@@ -28,14 +23,14 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	if r.Method != "POST" {
 		log.Println("非POST请求，不处理")
-		w.Write(canShuTiShi("请使用POST进行请求"))
+		w.Write(gongjus.CanShuTiShi("请使用POST进行请求"))
 		return
 	}
 	json := jsoniter.ConfigCompatibleWithStandardLibrary
 	datab, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		log.Println("datab读取错误", err, r)
-		w.Write(canShuTiShi("数据读取错误，请重试！"))
+		w.Write(gongjus.CanShuTiShi("数据读取错误，请重试！"))
 		return
 	}
 
@@ -44,15 +39,15 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal(datab, &dataObj)
 	if err != nil {
 		log.Println("datab解析错误", err)
-		w.Write(canShuTiShi("参数错误，请注意约定好的参数格式！"))
+		w.Write(gongjus.CanShuTiShi("参数错误，请注意约定好的参数格式！"))
 		return
 	}
-	ret := dataObj
+	ret := service.FenFaYeWu(dataObj)
 	log.Println("分发后返回的数据直接转成json发给前端ret---", ret)
 	retByte, err := json.Marshal(ret)
 	if err != nil {
 		log.Println("返回数据组装json错误，这个错误不应该发生", err)
-		w.Write(canShuTiShi("内部错误，请稍后重试！"))
+		w.Write(gongjus.CanShuTiShi("内部错误，请稍后重试！"))
 		return
 	}
 	w.Write(retByte)

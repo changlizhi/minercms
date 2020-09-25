@@ -21,12 +21,12 @@
 
 * uri:/addNews
 * 说明:添加新闻标题，只是作为一个新闻主题存在，可以在右侧列表中展示，提供简介内容
-* 业务号: F001
+* 业务号: FW001
 * 入参:
 
 ```json
 {
-  "YeWuHao":"F001",//NOTNULL/业务号
+  "YeWuHao":"FW001",//NOTNULL/业务号
   "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
   "LeiXing":"IPFS",//NOTNULL/类型
   "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
@@ -41,16 +41,22 @@
 * 成功返回:
 
 ```json
-
 {
-  "Id":"001",
-  "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-  "LeiXing":"IPFS",//NOTNULL/类型
-  "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-  "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-  "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-  "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx"
+  "ZhuangTai":"ChengGong",
+  "ShuoMing":"成功",
+  "ShuJu":[
+    {
+      "Id":"001",
+      "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+      "LeiXing":"IPFS",//NOTNULL/类型
+      "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+      "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+      "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
+      "SuoLueTu":"http://ssss.png",
+      "NeiRong":"xxx"
+    }
+    
+  ],
 }
 
 ```
@@ -61,7 +67,8 @@
 
 {
   ZhuangTai:"ShiBai",
-  ShuoMing:"失败:xxx"
+  ShuoMing:"失败:xxx",
+  ShuJu:[]
 }
 
 ```
@@ -70,13 +77,13 @@
 
 * uri:/delNews
 * 说明：如果要删除一条新闻则删除包括新闻主题和新闻内容列表
-* 业务号: F002
+* 业务号: FW002
 * 入参：
 
 ```json
 
 {
-  "YeWuHao":"F002",//NOTNULL/业务号
+  "YeWuHao":"FW002",//NOTNULL/业务号
   "Id":"001"
 }
 
@@ -87,8 +94,14 @@
 ```json
 {
   "ZhuangTai":"ChengGong",
-  "ShuoMing":"成功",//如果有简单介绍说明则会放在这里
-  "ShuJu":[]//后端必然返回这个数据，删除时如果有业务数据会在此字段提供，
+  "ShuoMing":"成功",
+  "ShuJu":[
+    {
+      "ZhuangTai":"ChengGong",
+      "ShuoMing":"成功",//如果有简单介绍说明则会放在这里
+      "ShuJu":[]//后端必然返回这个数据，删除时如果有业务数据会在此字段提供，
+    }
+  ]
 }
 ```
 
@@ -96,8 +109,9 @@
 
 ```json
 {
-  "ZhuangTai":"ShiBai",
-  "ShuoMing":"失败:xxx原因"//如果有简单介绍说明则会放在这里
+  ZhuangTai:"ShiBai",
+  ShuoMing:"失败:xxx",
+  ShuJu:[]
 }
 ```
 
@@ -105,12 +119,12 @@
 
 * uri:/updateNews
 * 说明:更新新闻，带着id即可
-* 业务号: F003
+* 业务号: FW003
 * 入参:
 
 ```json
 {
-  "YeWuHao":"F003",//NOTNULL/业务号
+  "YeWuHao":"FW003",//NOTNULL/业务号
   "Id":"001",
   "BiaoTi":"IPFSMain修改",//NOTNULL/标题
   "LeiXing":"咨询",//NOTNULL/类型
@@ -128,14 +142,20 @@
 ```json
 
 {
-  "Id":"001",
-  "BiaoTi":"IPFSMain修改",//NOTNULL/标题
-  "LeiXing":"咨询",//NOTNULL/类型
-  "ShiJian":"2020-09-24 16:08:04",//NOTNEED/时间
-  "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
-  "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-  "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx"
+  "ZhuangTai":"ChengGong",
+  "ShuoMing":"成功",
+  "ShuJu":[
+    {
+      "Id":"001",
+      "BiaoTi":"IPFSMain修改",//NOTNULL/标题
+      "LeiXing":"咨询",//NOTNULL/类型
+      "ShiJian":"2020-09-24 16:08:04",//NOTNEED/时间
+      "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
+      "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
+      "SuoLueTu":"http://ssss.png",
+      "NeiRong":"xxx"
+    }
+  ]
 }
 
 
@@ -144,10 +164,10 @@
 * 失败返回:
 
 ```json
-
 {
   ZhuangTai:"ShiBai",
-  ShuoMing:"失败:xxx"
+  ShuoMing:"失败:xxx",
+  ShuJu:[]
 }
 
 ```
@@ -156,13 +176,13 @@
 
 * uri:/queryNews
 * 说明：在右侧显示新闻列表
-* 业务号: F004
+* 业务号: FW004
 * 入参：
 
 ```json
 
 {
-  "YeWuHao":"F004",//NOTNULL/业务号
+  "YeWuHao":"FW004",//NOTNULL/业务号
   "DangQianYe":"1",//当前页
   "MeiYeTiaoShu":"10",//每页条数
   "KaiShiShiJian":"2020-09-20",//开始时间
@@ -210,21 +230,22 @@
 
 ```json
 {
-  "ZhuangTai":"ShiBai",
-  "ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
+  ZhuangTai:"ShiBai",
+  ShuoMing:"失败:xxx",
+  ShuJu:[]
 }
 ```
 ### 查询新闻明细
 
 * uri:/getOneNews
 * 说明：点选某个新闻时中间显示新闻内容
-* 业务号: F005
+* 业务号: FW005
 * 入参：
 
 ```json
 
 {
-  "YeWuHao":"F005",//NOTNULL/业务号
+  "YeWuHao":"FW005",//NOTNULL/业务号
   "NewsId":"001"//新闻主键
 }
 
@@ -257,8 +278,9 @@
 
 ```json
 {
-  "ZhuangTai":"ShiBai",
-  "ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
+  ZhuangTai:"ShiBai",
+  ShuoMing:"失败:xxx",
+  ShuJu:[]
 }
 ```
 
