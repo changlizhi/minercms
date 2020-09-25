@@ -26,6 +26,11 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println("OPTIONS嗅探了")
 		return
 	}
+	if r.Method != "POST" {
+		log.Println("非POST请求，不处理")
+		w.Write(canShuTiShi("请使用POST进行请求"))
+		return
+	}
 	json := jsoniter.ConfigCompatibleWithStandardLibrary
 	datab, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -55,7 +60,11 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func StartAPI() {
-	http.HandleFunc("/cms", BoyuCmsHandler)
+	http.HandleFunc("/cms/addNews", BoyuCmsHandler)
+	http.HandleFunc("/cms/delNews", BoyuCmsHandler)
+	http.HandleFunc("/cms/updateNews", BoyuCmsHandler)
+	http.HandleFunc("/cms/queryNews", BoyuCmsHandler)
+	http.HandleFunc("/cms/getOneNews", BoyuCmsHandler)
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		log.Fatal("服务端报错：", err.Error())
