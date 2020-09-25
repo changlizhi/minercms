@@ -1,9 +1,10 @@
 package main
-import(
-"log"
-"testing"
+
+import (
+	"log"
+	"testing"
 )
 
-func TestBuild(t *testing.T){
+func TestBuild(t *testing.T) {
 	log.Println("测试构建")
 }

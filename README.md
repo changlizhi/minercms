@@ -26,12 +26,13 @@
 
 ```json
 {
-	"BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-	"BiaoQian":"太空竞赛",//NOTNULL/标签
-	"LeiXing":"官宣",//NOTNULL/类型
-	"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-	"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-	"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+  "LeiXing":"IPFS",//NOTNULL/类型
+  "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+  "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+  "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "SuoLueTu":"http://ssss.png",
+  "NeiRong":"xxx",
 }
 
 ```
@@ -41,17 +42,14 @@
 ```json
 
 {
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-		"BiaoQian":"太空竞赛",//NOTNULL/标签
-		"LeiXing":"官宣",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
+  "Id":"001",
+  "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+  "LeiXing":"IPFS",//NOTNULL/类型
+  "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+  "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+  "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "SuoLueTu":"http://ssss.png",
+  "NeiRong":"xxx",
 }
 
 ```
@@ -61,56 +59,8 @@
 ```json
 
 {
-	ZhuangTai:"ShiBai",
-	ShuoMing:"失败:xxx"
-}
-
-```
-
-### 添加新闻内容
-
-* uri:/addNewsContent
-* 说明:添加新闻内容，根据传入的顺序跟新闻主题时多对一的方式，查询时会根据录入顺序以子array的方式给前端，前端根据此列表里定义的顺序进行循环展示内容，当然也可以一段传入富文本内容
-* 入参:
-
-```json
-
-{
-	"Id":"001",//NOTNEED/主键
-	"NewsId":"001",//NOTNULL/新闻主键
-	"ShunXu":"1",//NOTNEED/顺序
-	"XiaoBiaoTi":"生态现状",//小标题
-	"WenZiNeiRong":"根据介绍，目前已。。。",//文字内容
-	"TuPianDiZhi":"https://image.ipfsmain.cn/news/202009/23/87383e3d9a80983bdd2545dbf444889b.png",//图片地址
-}
-
-```
-
-* 成功返回:返回后数据可以直接预览
-
-```json
-
-{
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-		"BiaoQian":"太空竞赛",//NOTNULL/标签
-		"LeiXing":"官宣",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[
-			{
-				"Id":"001",
-				"NewsId":"001",//NOTNULL/新闻主键
-				"ShunXu":"1",//NOTNEED/////////顺序
-				"XiaoBiaoTi":"生态现状",//小标题
-				"WenZiNeiRong":"根据介绍，目前已。。。",//文字内容
-				"TuPianDiZhi":"https://image.ipfsmain.cn/news/202009/23/87383e3d9a80983bdd2545dbf444889b.png",//图片地址
-			}
-		]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
+  ZhuangTai:"ShiBai",
+  ShuoMing:"失败:xxx"
 }
 
 ```
@@ -124,7 +74,7 @@
 ```json
 
 {
-	"Id":"001"
+  "Id":"001"
 }
 
 ```
@@ -133,9 +83,9 @@
 
 ```json
 {
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",//如果有简单介绍说明则会放在这里
-	"ShuJu":[]//后端必然返回这个数据，删除时如果有业务数据会在此字段提供，
+  "ZhuangTai":"ChengGong",
+  "ShuoMing":"成功",//如果有简单介绍说明则会放在这里
+  "ShuJu":[]//后端必然返回这个数据，删除时如果有业务数据会在此字段提供，
 }
 ```
 
@@ -143,131 +93,74 @@
 
 ```json
 {
-	"ZhuangTai":"ShiBai",
-	"ShuoMing":"失败:xxx原因",//如果有简单介绍说明则会放在这里
+  "ZhuangTai":"ShiBai",
+  "ShuoMing":"失败:xxx原因",//如果有简单介绍说明则会放在这里
 }
 ```
 
 ### 修改新闻
 
 * uri:/updateNews
-* 说明：修改新闻则修改的时新闻新建时那些字段进行修改
-* 入参：
+* 说明:更新新闻，带着id即可
+
+* 入参:
 
 ```json
 {
-	"Id":"001",
-	"BiaoTi":"IPFSMain全球奖励排名第一2",//NOTNULL/标题
-	"BiaoQian":"太空竞赛2",//NOTNULL/标签
-	"LeiXing":"官宣2",//NOTNULL/类型
-	"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-	"GengXin":"2020-09-24 14:18:04",//NOTNEED/时间
-	"JianJie":"北京时间9月22日上午8点，太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "Id":"001",
+  "BiaoTi":"IPFSMain修改",//NOTNULL/标题
+  "LeiXing":"咨询",//NOTNULL/类型
+  "ShiJian":"2020-09-24 16:08:04",//NOTNEED/时间
+  "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
+  "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "SuoLueTu":"http://ssss.png",
+  "NeiRong":"xxx",
 }
 
 ```
 
-* 成功返回：
+* 成功返回:
 
 ```json
 
 {
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"Id":"001",
-		"BiaoTi":"IPFSMain全球奖励排名第一2",//NOTNULL/标题
-		"BiaoQian":"太空竞赛2",//NOTNULL/标签
-		"LeiXing":"官宣2",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-24 14:18:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
-		"NeiRongs":[
-			{
-				"Id":"001",
-				"NewsId":"001",//NOTNULL/新闻主键
-				"ShunXu":"1",//NOTNEED/顺序
-				"XiaoBiaoTi":"生态现状",//小标题
-				"WenZiNeiRong":"根据介绍，目前已。。。",//文字内容
-				"TuPianDiZhi":"https://image.ipfsmain.cn/news/202009/23/87383e3d9a80983bdd2545dbf444889b.png",//图片地址
-			}
-		]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
+  "Id":"001",
+  "BiaoTi":"IPFSMain修改",//NOTNULL/标题
+  "LeiXing":"咨询",//NOTNULL/类型
+  "ShiJian":"2020-09-24 16:08:04",//NOTNEED/时间
+  "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
+  "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+  "SuoLueTu":"http://ssss.png",
+  "NeiRong":"xxx",
 }
 
-```
-
-### 修改新闻内容
-
-* uri:/updateNewsContent
-* 说明：修改新闻内容只是修改某一段内容，前端要控制可以点选某一段进行修改，当然也可以一段传入富文本内容
-* 入参：
-
-```json
-
-{
-	"Id":"001",//NOTNEED/主键
-	"NewsId":"001",//NOTNULL/新闻主键
-	"ShunXu":"1",//NOTNEED/顺序
-	"XiaoBiaoTi":"生态现状2",//小标题
-	"WenZiNeiRong":"根据介绍，目前已2",//文字内容
-	"TuPianDiZhi":"https://image.ipfxxx.png",//图片地址
-}
-
-```
-
-
-* 成功返回:返回后数据可以直接预览
-
-```json
-
-{
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-		"BiaoQian":"太空竞赛",//NOTNULL/标签
-		"LeiXing":"官宣",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[
-			{
-				"Id":"001",//NOTNEED/主键
-				"NewsId":"001",//NOTNULL/新闻主键
-				"ShunXu":"1",//NOTNEED/顺序
-				"XiaoBiaoTi":"生态现状2",//小标题
-				"WenZiNeiRong":"根据介绍，目前已2",//文字内容
-				"TuPianDiZhi":"https://image.ipfxxx.png",//图片地址
-			}
-		]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
-}
 
 ```
 
 * 失败返回:
 
 ```json
+
 {
-	"ZhuangTai":"ShiBai",
-	"ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
+  ZhuangTai:"ShiBai",
+  ShuoMing:"失败:xxx"
 }
+
 ```
 
 ### 查询新闻列表
 
-* uri:/queryNewsList
+* uri:/queryNews
 * 说明：在右侧显示新闻列表
 * 入参：
 
 ```json
 
 {
-	"DangQianYe":"1",//当前页
-	"MeiYeTiaoShu":"10",//每页条数
-	"KaiShiShiJian":"2020-09-20",//开始时间
-	"JieShuShiJian":"2020-09-24"//结束时间
+  "DangQianYe":"1",//当前页
+  "MeiYeTiaoShu":"10",//每页条数
+  "KaiShiShiJian":"2020-09-20",//开始时间
+  "JieShuShiJian":"2020-09-24"//结束时间
 }
 
 ```
@@ -278,36 +171,30 @@
 ```json
 
 {
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"Id":"001",
-		"BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
-		"BiaoQian":"太空竞赛",//NOTNULL/标签
-		"LeiXing":"官宣",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	},{
-		"Id":"002",
-		"BiaoTi":"IPFSMain全球奖励排名第一2",//NOTNULL/标题
-		"BiaoQian":"太空竞赛2",//NOTNULL/标签
-		"LeiXing":"官宣2",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间922月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	},{
-		"Id":"003",
-		"BiaoTi":"IPFSMain全球奖励排名第一3",//NOTNULL/标题
-		"BiaoQian":"太空竞赛3",//NOTNULL/标签
-		"LeiXing":"官宣3",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
-		"NeiRongs":[]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
+  "ZhuangTai":"ChengGong",
+  "ShuoMing":"成功",
+  "ShuJu":[
+        {
+          "Id":"001",
+          "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+          "LeiXing":"IPFS",//NOTNULL/类型
+          "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+          "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+          "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+          "SuoLueTu":"http://ssss.png",
+          "NeiRong":"xxx",
+        },
+        {
+          "Id":"002",
+          "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+          "LeiXing":"IPFS",//NOTNULL/类型
+          "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+          "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+          "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+          "SuoLueTu":"http://ssss.png",
+          "NeiRong":"xxx",
+        }
+   ]
 }
 
 ```
@@ -317,11 +204,10 @@
 
 ```json
 {
-	"ZhuangTai":"ShiBai",
-	"ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
+  "ZhuangTai":"ShiBai",
+  "ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
 }
 ```
-
 ### 查询新闻明细
 
 * uri:/getOneNews
@@ -331,7 +217,7 @@
 ```json
 
 {
-	"NewsId":"001"//新闻主键
+  "NewsId":"001"//新闻主键
 }
 
 ```
@@ -340,27 +226,20 @@
 ```json
 
 {
-	"ZhuangTai":"ChengGong",
-	"ShuoMing":"成功",
-	"ShuJu":[{
-		"Id":"001",
-		"BiaoTi":"IPFSMain全球奖励排名第一2",//NOTNULL/标题
-		"BiaoQian":"太空竞赛2",//NOTNULL/标签
-		"LeiXing":"官宣2",//NOTNULL/类型
-		"ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
-		"GengXin":"2020-09-24 14:18:04",//NOTNEED/时间
-		"JianJie":"北京时间9月22日上午8点，太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
-		"NeiRongs":[
-			{
-				"Id":"001",
-				"NewsId":"001",//NOTNULL/新闻主键
-				"ShunXu":"1",//NOTNEED/顺序
-				"XiaoBiaoTi":"生态现状",//小标题
-				"WenZiNeiRong":"根据介绍，目前已。。。",//文字内容
-				"TuPianDiZhi":"https://image.ipfsmain.cn/news/202009/23/87383e3d9a80983bdd2545dbf444889b.png",//图片地址
-			}
-		]//刚创建时没有NeiRongs但是后端会返回一个占位字段，后端必然返回，前端直接判断lenth即可。
-	}]
+  "ZhuangTai":"ChengGong",
+  "ShuoMing":"成功",
+  "ShuJu":[
+        {
+          "Id":"001",
+          "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
+          "LeiXing":"IPFS",//NOTNULL/类型
+          "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
+          "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
+          "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。"//NOTNULL/简介
+          "SuoLueTu":"http://ssss.png",
+          "NeiRong":"xxx"
+        }
+  ]
 }
 
 ```
@@ -370,8 +249,10 @@
 
 ```json
 {
-	"ZhuangTai":"ShiBai",
-	"ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
+  "ZhuangTai":"ShiBai",
+  "ShuoMing":"失败:xxx原因，请刷新页面后重试",//如果有简单介绍说明则会放在这里
 }
 ```
+
+
 

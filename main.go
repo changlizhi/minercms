@@ -1,60 +1,62 @@
 package main
 
 import (
-  "encoding/json"
-  "io"
-  "io/ioutil"
-  "log"
-  "net/http"
-  "os"
-  "github.com/json-iterator/go"
+	"encoding/json"
+	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+
+	jsoniter "github.com/json-iterator/go"
 )
-func canShuTiShi(canShu string)[]byte{
-  json := jsoniter.ConfigCompatibleWithStandardLibrary
-  ret,_ := json.Marshal(map[string]interface{}{
-    "TiShi":canShu,
-  })
-  return ret
+
+func canShuTiShi(canShu string) []byte {
+	json := jsoniter.ConfigCompatibleWithStandardLibrary
+	ret, _ := json.Marshal(map[string]interface{}{
+		"TiShi": canShu,
+	})
+	return ret
 }
 func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
-  w.Header().Set("Access-Control-Allow-Origin", "*")             //允许访问所有域
-  w.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
-  w.Header().Set("content-type", "application/json")             //返回数据格式是json
-  if r.Method == "OPTIONS"{
-    log.Println("OPTIONS嗅探了")
-    return
-  }
-  json := jsoniter.ConfigCompatibleWithStandardLibrary
-  datab, err := ioutil.ReadAll(r.Body)
-  if err != nil{
-    log.Println("datab读取错误", err, r)
-    w.Write(canShuTiShi("数据读取错误，请重试！"))
-    return
-  }
-  
-  dataObj := map[string]interface{}{}
-  //从具体操作来说，拿到数据直接丢给分发应该没多大问题，但是如果参数没传上来那就不对应该直接返回错误信息提示
-  err = json.Unmarshal(datab,&dataObj)
-  if err != nil{
-    log.Println("datab解析错误",err)
-    w.Write(canShuTiShi("参数错误，请注意约定好的参数格式！"))
-    return
-  }
-  ret := dataObj
-  log.Println("分发后返回的数据直接转成json发给前端ret---",ret)
-  retByte,err := json.Marshal(ret)
-  if err != nil{
-    log.Println("返回数据组装json错误，这个错误不应该发生",err)
-    w.Write(canShuTiShi("内部错误，请稍后重试！"))
-    return
-  }
-  w.Write(retByte)
-  return
+	w.Header().Set("Access-Control-Allow-Origin", "*")             //允许访问所有域
+	w.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
+	w.Header().Set("content-type", "application/json")             //返回数据格式是json
+	if r.Method == "OPTIONS" {
+		log.Println("OPTIONS嗅探了")
+		return
+	}
+	json := jsoniter.ConfigCompatibleWithStandardLibrary
+	datab, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		log.Println("datab读取错误", err, r)
+		w.Write(canShuTiShi("数据读取错误，请重试！"))
+		return
+	}
+
+	dataObj := map[string]interface{}{}
+	//从具体操作来说，拿到数据直接丢给分发应该没多大问题，但是如果参数没传上来那就不对应该直接返回错误信息提示
+	err = json.Unmarshal(datab, &dataObj)
+	if err != nil {
+		log.Println("datab解析错误", err)
+		w.Write(canShuTiShi("参数错误，请注意约定好的参数格式！"))
+		return
+	}
+	ret := dataObj
+	log.Println("分发后返回的数据直接转成json发给前端ret---", ret)
+	retByte, err := json.Marshal(ret)
+	if err != nil {
+		log.Println("返回数据组装json错误，这个错误不应该发生", err)
+		w.Write(canShuTiShi("内部错误，请稍后重试！"))
+		return
+	}
+	w.Write(retByte)
+	return
 }
 
 func StartAPI() {
 	http.HandleFunc("/cms", BoyuCmsHandler)
-	err := http.ListenAndServe(":8888",nil)
+	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		log.Fatal("服务端报错：", err.Error())
 	}
@@ -67,8 +69,8 @@ func main() {
 func FileHandler(w http.ResponseWriter, r *http.Request) {
 	reader, err := r.MultipartReader()
 	if err != nil {
-		log.Println("main.go,YongHuHandler:err",err)
-    http.Error(w, err.Error(), http.StatusInternalServerError)
+		log.Println("main.go,YongHuHandler:err", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
