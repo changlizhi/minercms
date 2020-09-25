@@ -26,14 +26,14 @@
 
 ```json
 {
-  "YeWuHao":"",//NOTNULL/业务号
+  "YeWuHao":"F001",//NOTNULL/业务号
   "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
   "LeiXing":"IPFS",//NOTNULL/类型
   "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
   "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
   "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
   "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx",
+  "NeiRong":"xxx"
 }
 
 ```
@@ -50,7 +50,7 @@
   "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
   "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
   "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx",
+  "NeiRong":"xxx"
 }
 
 ```
@@ -76,6 +76,7 @@
 ```json
 
 {
+  "YeWuHao":"F002",//NOTNULL/业务号
   "Id":"001"
 }
 
@@ -96,7 +97,7 @@
 ```json
 {
   "ZhuangTai":"ShiBai",
-  "ShuoMing":"失败:xxx原因",//如果有简单介绍说明则会放在这里
+  "ShuoMing":"失败:xxx原因"//如果有简单介绍说明则会放在这里
 }
 ```
 
@@ -109,6 +110,7 @@
 
 ```json
 {
+  "YeWuHao":"F003",//NOTNULL/业务号
   "Id":"001",
   "BiaoTi":"IPFSMain修改",//NOTNULL/标题
   "LeiXing":"咨询",//NOTNULL/类型
@@ -116,7 +118,7 @@
   "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
   "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
   "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx",
+  "NeiRong":"xxx"
 }
 
 ```
@@ -133,7 +135,7 @@
   "GengXin":"2020-09-24 16:08:04",//NOTNEED/时间
   "JianJie":"北京时间Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
   "SuoLueTu":"http://ssss.png",
-  "NeiRong":"xxx",
+  "NeiRong":"xxx"
 }
 
 
@@ -160,6 +162,7 @@
 ```json
 
 {
+  "YeWuHao":"F004",//NOTNULL/业务号
   "DangQianYe":"1",//当前页
   "MeiYeTiaoShu":"10",//每页条数
   "KaiShiShiJian":"2020-09-20",//开始时间
@@ -185,7 +188,7 @@
           "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
           "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
           "SuoLueTu":"http://ssss.png",
-          "NeiRong":"xxx",
+          "NeiRong":"xxx"
         },
         {
           "Id":"002",
@@ -195,7 +198,7 @@
           "GengXin":"2020-09-23 16:08:04",//NOTNEED/时间
           "JianJie":"北京时间9月22日上午8点，Filecoin协议实验室举办了线上Space Race Celebration。在直播中，官方技术人员围绕存储生态、太空竞赛成果、Space Race 2进行分享。",//NOTNULL/简介
           "SuoLueTu":"http://ssss.png",
-          "NeiRong":"xxx",
+          "NeiRong":"xxx"
         }
    ]
 }
@@ -221,6 +224,7 @@
 ```json
 
 {
+  "YeWuHao":"F005",//NOTNULL/业务号
   "NewsId":"001"//新闻主键
 }
 
