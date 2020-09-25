@@ -24,3 +24,11 @@ const (
 	FW004 = "FW004"
 	FW005 = "FW005"
 )
+
+//固定值
+const (
+	ShiBai      = "ShiBai"
+	ChengGong   = "ChengGong"
+	ShiBaiCN    = "失败"
+	ChengGongCN = "成功"
+)
