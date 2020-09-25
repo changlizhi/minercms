@@ -16,9 +16,16 @@ func FenFaYeWu(canShu map[string]interface{}) map[string]interface{} {
 	}
 	fuWuHao := yeWuHaoInterface.(string)
 	if fuWuHao == changliangs.FW001 {
-		retk
+		ret["ZhuangTai"] = "ChengGong"
+		ret["ShuoMing"] = "成功"
+		ret["ShuJu"] = []map[string]interface{}{
+			map[string]interface{}{
+				"FangWenShuoMing": "访问了Fw001",
+			},
+		}
+	} else {
+		ret = canShu
 	}
-	ret = canShu
 	return ret
 
 }

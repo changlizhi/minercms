@@ -26,7 +26,7 @@
 
 ```json
 {
-  "YeWuHao":"FW001",//NOTNULL/业务号
+  "FuWuHao":"FW001",//NOTNULL/业务号
   "BiaoTi":"IPFSMain全球奖励排名第一",//NOTNULL/标题
   "LeiXing":"IPFS",//NOTNULL/类型
   "ShiJian":"2020-09-23 16:08:04",//NOTNEED/时间
@@ -83,7 +83,7 @@
 ```json
 
 {
-  "YeWuHao":"FW002",//NOTNULL/业务号
+  "FuWuHao":"FW002",//NOTNULL/业务号
   "Id":"001"
 }
 
@@ -124,7 +124,7 @@
 
 ```json
 {
-  "YeWuHao":"FW003",//NOTNULL/业务号
+  "FuWuHao":"FW003",//NOTNULL/业务号
   "Id":"001",
   "BiaoTi":"IPFSMain修改",//NOTNULL/标题
   "LeiXing":"咨询",//NOTNULL/类型
@@ -182,7 +182,7 @@
 ```json
 
 {
-  "YeWuHao":"FW004",//NOTNULL/业务号
+  "FuWuHao":"FW004",//NOTNULL/业务号
   "DangQianYe":"1",//当前页
   "MeiYeTiaoShu":"10",//每页条数
   "KaiShiShiJian":"2020-09-20",//开始时间
@@ -245,7 +245,7 @@
 ```json
 
 {
-  "YeWuHao":"FW005",//NOTNULL/业务号
+  "FuWuHao":"FW005",//NOTNULL/业务号
   "NewsId":"001"//新闻主键
 }
 

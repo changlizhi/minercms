@@ -2,7 +2,18 @@ package changliangs
 
 //字段名
 const (
-	FuWuHao = "FuWuHao"
+	FuWuHao   = "FuWuHao"
+	ZhuangTai = "ZhuangTai"
+	ShuoMing  = "ShuoMing"
+	ShuJu     = "ShuJu"
+	Id        = "Id"
+	BiaoTi    = "BiaoTi"
+	LeiXing   = "LeiXing"
+	ShiJian   = "ShiJian"
+	GengXin   = "GengXin"
+	JianJie   = "JianJie"
+	SuoLueTu  = "SuoLueTu"
+	NeiRong   = "NeiRong"
 )
 
 //服务号
