@@ -1,0 +1,3 @@
+package daos
+
+func InsertData() {}

@@ -1,31 +1,31 @@
 package service
 
 import (
-	"minercms/changliangs"
+	"minercms/consts"
 )
 
 func FenFaYeWu(canShu map[string]interface{}) map[string]interface{} {
 	ret := map[string]interface{}{}
-	yeWuHaoInterface := canShu[changliangs.FuWuHao]
+	yeWuHaoInterface := canShu[consts.FuWuHao]
 	if yeWuHaoInterface == nil || yeWuHaoInterface.(string) == "" {
-		ret[changliangs.ZhuangTai] = changliangs.ShiBai
-		ret[changliangs.ShuoMing] = "失败：未提供服务号"
+		ret[consts.ZhuangTai] = consts.ShiBai
+		ret[consts.ShuoMing] = "失败：未提供服务号"
 		return ret
 	}
 	fuWuHao := yeWuHaoInterface.(string)
-	if fuWuHao == changliangs.FW001 {
+	if fuWuHao == consts.FW001 {
 		return AddNewsService(canShu)
-	} else if fuWuHao == changliangs.FW002 {
+	} else if fuWuHao == consts.FW002 {
 		return DelNewsService(canShu)
-	} else if fuWuHao == changliangs.FW003 {
+	} else if fuWuHao == consts.FW003 {
 		return UpdateNewsService(canShu)
-	} else if fuWuHao == changliangs.FW004 {
+	} else if fuWuHao == consts.FW004 {
 		return QueryNewsService(canShu)
-	} else if fuWuHao == changliangs.FW005 {
+	} else if fuWuHao == consts.FW005 {
 		return GetOneNewsService(canShu)
 	} else {
-		ret[changliangs.ZhuangTai] = changliangs.ShiBai
-		ret[changliangs.ShuoMing] = "失败：不支持的服务号"
+		ret[consts.ZhuangTai] = consts.ShiBai
+		ret[consts.ShuoMing] = "失败：不支持的服务号"
 		return ret
 	}
 }

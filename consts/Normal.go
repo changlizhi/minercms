@@ -1,4 +1,9 @@
-package changliangs
+package consts
+
+//表名
+const (
+	News = "News"
+)
 
 //字段名
 const (
@@ -16,6 +21,18 @@ const (
 	NeiRong   = "NeiRong"
 )
 
+//自定义字段，不在数据库中使用的
+const (
+	ShuJuKu   = "ShuJuKu"
+	ShuJuBiao = "ShuJuBiao"
+	ZhuJian   = "ZhuJian"
+	SuoYin    = "SuoYin"
+	ZiDuans   = "ZiDuans"
+	BianMa    = "BianMa"
+	ChangDu   = "ChangDu"
+	MoRenZhi  = "MoRenZhi"
+)
+
 //服务号
 const (
 	FW001 = "FW001"
@@ -31,4 +48,5 @@ const (
 	ChengGong   = "ChengGong"
 	ShiBaiCN    = "失败"
 	ChengGongCN = "成功"
+	MINERCMS    = "minercms" //表名
 )

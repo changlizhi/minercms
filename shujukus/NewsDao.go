@@ -1,3 +1,0 @@
-package shujukus
-
-func 
