@@ -35,15 +35,20 @@ const (
 
 //自定义字段，不在数据库中使用的
 const (
-	ShuJuZhis = "ShuJuZhis"
-	ShuJuKu   = "ShuJuKu"
-	ShuJuBiao = "ShuJuBiao"
-	ZhuJian   = "ZhuJian"
-	SuoYin    = "SuoYin"
-	ZiDuans   = "ZiDuans"
-	BianMa    = "BianMa"
-	ChangDu   = "ChangDu"
-	MoRenZhi  = "MoRenZhi"
+	TiaoJians     = "TiaoJians"
+	ShuJuZhis     = "ShuJuZhis"
+	ShuJuKu       = "ShuJuKu"
+	ShuJuBiao     = "ShuJuBiao"
+	ZhuJian       = "ZhuJian"
+	SuoYin        = "SuoYin"
+	ZiDuans       = "ZiDuans"
+	BianMa        = "BianMa"
+	ChangDu       = "ChangDu"
+	MoRenZhi      = "MoRenZhi"
+	KaiShiShiJian = "KaiShiShiJian"
+	JieShuShiJian = "JieShuShiJian"
+	DangQianYe    = "DangQianYe"
+	MeiYeTiaoShu  = "MeiYeTiaoShu"
 )
 
 //服务号

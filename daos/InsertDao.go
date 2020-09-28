@@ -16,7 +16,6 @@ func InsertData(canShu map[string]interface{}) map[string]interface{} {
 	wenHaos := []string{}
 	values := []interface{}{}
 	//默认ZhuJian全都通过snowflakerid得到，但是业务表中主键是从主键表来的。
-	log.Println("caoZuoZhis---", caoZuoZhis)
 	for k, v := range caoZuoZhis {
 		keys = append(keys, k)
 		values = append(values, v)

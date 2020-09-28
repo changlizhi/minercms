@@ -1,15 +1,27 @@
 package service
 
-import "minercms/consts"
+import (
+	"minercms/consts"
+	"minercms/daosnews"
+	"minercms/utils"
+)
 
-func UpdateNewsService(canShu map[string]interface{}) map[string]interface{} {
+func JiaoYanFw003(canShu map[string]interface{}) map[string]interface{} {
 	ret := map[string]interface{}{}
-	ret[consts.ZhuangTai] = consts.ChengGong
-	ret[consts.ShuoMing] = consts.ChengGongCN
-	ret[consts.ShuJu] = []map[string]interface{}{
-		map[string]interface{}{
-			"FangWenShuoMing": "访问了Fw003",
-		},
+	id := utils.HuoQuZiFuZhi(canShu[consts.Id])
+	if utils.ShiFouKongZiFu(id) {
+		ret[consts.ZhuangTai] = consts.ShiBai
+		ret[consts.ShuoMing] = "失败:Id主键不能为空"
+		return ret
 	}
+
+	return ret
+}
+func UpdateNewsService(canShu map[string]interface{}) map[string]interface{} {
+	retJiaoYan := JiaoYanFw003(canShu)
+	if retJiaoYan[consts.ZhuangTai] == consts.ShiBai {
+		return retJiaoYan
+	}
+	ret := daosnews.UpdateNews(canShu)
 	return ret
 }

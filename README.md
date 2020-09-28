@@ -185,8 +185,8 @@
   "FuWuHao":"FW004",//NOTNULL/业务号
   "DangQianYe":"1",//当前页
   "MeiYeTiaoShu":"10",//每页条数
-  "KaiShiShiJian":"2020-09-20",//开始时间
-  "JieShuShiJian":"2020-09-24"//结束时间
+  "BiaoTi":"xxx",
+  "LeiXing":"xxxx",
 }
 
 ```
