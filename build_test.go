@@ -7,7 +7,32 @@ import (
 	"minercms/utils"
 	"reflect"
 	"testing"
+	"time"
 )
+
+func TestString2Time(t *testing.T) {
+	ret := utils.String2Time("2020-03-16 20:20:20", consts.NyrSfm)
+	log.Println(ret)
+}
+func TestString2TimeNyrSfm(t *testing.T) {
+	ret := utils.String2TimeNyrSfm("2020-03-16 20:20:20")
+	log.Println(ret)
+}
+
+func TestHuoQuIdInt(t *testing.T) {
+	ret := utils.HuoQuId()
+	log.Println(ret)
+}
+func TestHuoQuIdZiFu(t *testing.T) {
+	for i := 0; i < 100000; i++ {
+		go func(i int) {
+			ret := utils.HuoQuIdZiFu()
+			log.Println("TestHuoQuIdZiFu---", i, ret, len(ret))
+		}(i)
+	}
+	time.Sleep(time.Duration(5) * time.Hour)
+
+}
 
 func TestReflect(t *testing.T) {
 	ziFu := "123"
@@ -84,6 +109,12 @@ func TestMysqlPool(t *testing.T) {
 				consts.MoRenZhi: "'boyu'",
 			},
 			map[string]interface{}{
+				consts.BianMa:   consts.SuoLueTu,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "500",
+				consts.MoRenZhi: "'boyu'",
+			},
+			map[string]interface{}{
 				consts.BianMa:   consts.JianJie,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "300",
@@ -91,7 +122,7 @@ func TestMysqlPool(t *testing.T) {
 			},
 			map[string]interface{}{
 				consts.BianMa:  consts.NeiRong,
-				consts.LeiXing: consts.TEXT,
+				consts.LeiXing: consts.MEDIUMTEXT,
 			},
 		},
 	}

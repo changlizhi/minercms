@@ -3,6 +3,7 @@ package service
 import (
 	"log"
 	"minercms/consts"
+	"minercms/daosnews"
 	"minercms/utils"
 )
 
@@ -51,19 +52,11 @@ func JiaoYanFw001(canShu map[string]interface{}) map[string]interface{} {
 }
 
 func AddNewsService(canShu map[string]interface{}) map[string]interface{} {
-	ret := map[string]interface{}{}
 	retJiaoYan := JiaoYanFw001(canShu)
 	if retJiaoYan[consts.ZhuangTai] == consts.ShiBai {
 		return retJiaoYan
 	}
 	//可以设置表的标题字段为唯一索引就不需要在插入之前校验了
-
-	ret[consts.ZhuangTai] = consts.ChengGong
-	ret[consts.ShuoMing] = consts.ChengGongCN
-	ret[consts.ShuJu] = []map[string]interface{}{
-		map[string]interface{}{
-			"FangWenShuoMing": "访问了Fw001",
-		},
-	}
+	ret := daosnews.InsertNews(canShu)
 	return ret
 }
