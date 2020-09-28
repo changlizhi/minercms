@@ -41,7 +41,7 @@ func QueryNewsList(canShu map[string]interface{}) map[string]interface{} {
 }
 
 func QueryOneNews(canShu map[string]interface{}) map[string]interface{} {
-	id := utils.HuoQuZiFuZhi(canShu[consts.LeiXing])
+	id := utils.HuoQuZiFuZhi(canShu[consts.Id])
 	needCanShu := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
 		consts.ShuJuBiao: consts.News,
