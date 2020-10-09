@@ -1,5 +1,5 @@
 # 公司新闻发布及展示
-
+org/gnome/desktop/wm/keybindings dconf-editor
 **说明**:
 
 * 表格中Header里中文为说明，字段名用拼音全拼
