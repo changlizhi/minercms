@@ -5,6 +5,7 @@ import (
 	"log"
 	"minercms/consts"
 	"minercms/utils"
+	"strconv"
 	"strings"
 )
 
@@ -35,7 +36,11 @@ func FindData(canShu map[string]interface{}) map[string]interface{} {
 			tvalues = append(tvalues, v)
 		}
 		if k == consts.DangQianYe{
-			dangQianYe=utils.HuoQuZiFuZhi(v)
+			dangQianYeStr:=utils.HuoQuZiFuZhi(v)
+			dangQianYeInt ,_:= strconv.Atoi(dangQianYeStr)
+			tempDangQianYe:=dangQianYeInt-1
+			dangQianYe=strconv.Itoa(tempDangQianYe)
+
 		}
 		if k==consts.MeiYeTiaoShu{
 			meiYeTiaoShu=utils.HuoQuZiFuZhi(v)
