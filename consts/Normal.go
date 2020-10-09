@@ -2,7 +2,8 @@ package consts
 
 //表名
 const (
-	News = "News"
+	News     = "News"
+	PageData = "PageData"
 )
 const (
 	Local         = "Local"
@@ -33,6 +34,19 @@ const (
 	NeiRong   = "NeiRong"
 )
 
+//
+//字段名
+const (
+	TitleName = "Title"     //标题
+	DataType  = "Type"      //数据类型
+	Info      = "Info"      //信息
+	Introduce = "Introduce" //介绍
+	Data      = "Data"      //数据
+	Thumbnail = "Thumbnail" //缩略图
+	Details   = "Details"   //详细说明
+	TimeInfo  = "TimeInfo"  //时间信息
+)
+
 //自定义字段，不在数据库中使用的
 const (
 	TiaoJians     = "TiaoJians"
@@ -58,6 +72,9 @@ const (
 	FW003 = "FW003"
 	FW004 = "FW004"
 	FW005 = "FW005"
+	FW006 = "FW006"
+	FW007 = "FW007"
+
 )
 
 //固定值

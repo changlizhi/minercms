@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -29,7 +30,7 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 	json := jsoniter.ConfigCompatibleWithStandardLibrary
 	datab, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		log.Println("datab读取错误", err, r)
+		log.Println("Data byte 读取错误", err, r)
 		w.Write(utils.CanShuTiShi("数据读取错误，请重试！"))
 		return
 	}
@@ -42,6 +43,8 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(utils.CanShuTiShi("参数错误，请注意约定好的参数格式！"))
 		return
 	}
+	fmt.Println("获取  json 值 ==dataObj",dataObj)
+
 	ret := service.FenFaYeWu(dataObj)
 	log.Println("分发后返回的数据直接转成json发给前端ret---", ret)
 	retByte, err := json.Marshal(ret)
@@ -54,12 +57,21 @@ func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+
 func StartAPI() {
 	http.HandleFunc("/cms/addNews", BoyuCmsHandler)
 	http.HandleFunc("/cms/delNews", BoyuCmsHandler)
 	http.HandleFunc("/cms/updateNews", BoyuCmsHandler)
 	http.HandleFunc("/cms/queryNews", BoyuCmsHandler)
 	http.HandleFunc("/cms/getOneNews", BoyuCmsHandler)
+
+	// 浏览器接口
+	//获取页面数据 Page Data
+	http.HandleFunc("/cms/getPageData", BoyuCmsHandler)
+
+
+
+
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		log.Fatal("服务端报错：", err.Error())

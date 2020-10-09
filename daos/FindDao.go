@@ -14,8 +14,8 @@ func FindData(canShu map[string]interface{}) map[string]interface{} {
 	caoZuoBiao := canShu[consts.ShuJuBiao].(string)
 	caoZuoZhis := canShu[consts.ShuJuZhis].(map[string]interface{}) //把需要查询的字段拿出来
 	tiaoJians := canShu[consts.TiaoJians].(map[string]interface{})  //把条件拿出来
-	dangQianYe := utils.HuoQuZiFuZhi(canShu[consts.DangQianYe])
-	meiYeTiaoShu := utils.HuoQuZiFuZhi(canShu[consts.MeiYeTiaoShu])
+	dangQianYe := ""
+	meiYeTiaoShu := ""
 
 	wenHaos := []string{}
 	colNames := []string{}
@@ -29,9 +29,16 @@ func FindData(canShu map[string]interface{}) map[string]interface{} {
 	tkeys := []string{}
 	tvalues := []interface{}{}
 	for k, v := range tiaoJians {
-		if k != consts.DangQianYe && k != consts.MeiYeTiaoShu {
+
+		if k != consts.DangQianYe && k != consts.MeiYeTiaoShu && v!=""{
 			tkeys = append(tkeys, k+" = ? ")
 			tvalues = append(tvalues, v)
+		}
+		if k == consts.DangQianYe{
+			dangQianYe=utils.HuoQuZiFuZhi(v)
+		}
+		if k==consts.MeiYeTiaoShu{
+			meiYeTiaoShu=utils.HuoQuZiFuZhi(v)
 		}
 	}
 
@@ -44,8 +51,13 @@ func FindData(canShu map[string]interface{}) map[string]interface{} {
 	builder.WriteString(".")
 	builder.WriteString(caoZuoBiao)
 
-	builder.WriteString(" WHERE ")
-	builder.WriteString(strings.Join(tkeys, " AND "))
+
+	if len(tvalues) > 0{
+
+		builder.WriteString(" WHERE ")
+		builder.WriteString(strings.Join(tkeys, " AND "))
+	}
+
 	if dangQianYe != "" && meiYeTiaoShu != "" {
 		builder.WriteString(" LIMIT ")
 		builder.WriteString(dangQianYe)
