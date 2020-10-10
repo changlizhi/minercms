@@ -1,7 +1,7 @@
 package consts
 
 //表名
-//Earning table
+//Power table
 //收益表
 const (
 	Power = "Powers"

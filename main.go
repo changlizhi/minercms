@@ -1,8 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
+	jsoniter "github.com/json-iterator/go"
 	"io"
 	"io/ioutil"
 	"minercms/log"
@@ -10,8 +10,7 @@ import (
 	"minercms/utils"
 	"net/http"
 	"os"
-
-	jsoniter "github.com/json-iterator/go"
+	"encoding/json"
 )
 
 func BoyuCmsHandler(w http.ResponseWriter, r *http.Request) {

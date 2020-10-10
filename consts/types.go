@@ -1,7 +1,7 @@
 package consts
 
 //表名
-//Earning table
+//Types table
 //收益表
 const (
 	Types = "Types"
