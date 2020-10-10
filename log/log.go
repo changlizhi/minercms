@@ -14,7 +14,7 @@ var (
 
 func init() {
 	//Errors file
-	path := "/home/ubuntu1/workspace/minercms/log"
+	path := "./log"
 
 	errFile, err := os.OpenFile(path+"/errors.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
