@@ -4,7 +4,7 @@ package consts
 //Earning table
 //收益表
 const (
-	Earning = "Earning"
+	Earning = "Earnings"
 )
 
 const (
