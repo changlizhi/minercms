@@ -187,13 +187,44 @@ func TestMysqlPageData(t *testing.T) {
 		},
 	}
 	daos.ChuangJianBiao(canShu)
-	/*
-		titleName = "Title"     //标题
-		dataType  = "Type"      //数据类型
-		//info      = "Info"      //信息
-		introduce = "Introduce" //介绍
-		data      = "Data"      //数据
-		thumbnail = "Thumbnail" //缩略图
-		details   = "Details"   //详细说明
-	*/
+	//======================================
+	//创建 收益表
+	log.Println("=== 开始创建收益表 ===")
+	log.Println("== create table PageData ==", db)
+	dataEarning := map[string]interface{}{
+		consts.ShuJuKu:   consts.MINERCMS,
+		consts.ShuJuBiao: consts.Earning,
+		consts.ZhuJian:   consts.Id,
+		consts.SuoYin:    "",
+		consts.ZiDuans: []interface{}{
+			map[string]interface{}{
+				consts.BianMa:   consts.Id,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "50",
+				consts.MoRenZhi: "'星河飞天'",
+			},
+			map[string]interface{}{
+				consts.BianMa:   consts.CurrentGrossRevenue,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "100",
+				consts.MoRenZhi: "'星河飞天'",
+			},
+			map[string]interface{}{
+				consts.BianMa:   consts.NowTime,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "50",
+				consts.MoRenZhi: "'IPFS-PageData'",
+			},
+			map[string]interface{}{
+				consts.BianMa:   consts.UserIdEarning,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "20",
+				consts.MoRenZhi: "'星河飞天'",
+			},
+		},
+	}
+	daos.ChuangJianBiao(dataEarning)
+	log.Println("=== 创建收益表完成 ===")
+
+
 }
