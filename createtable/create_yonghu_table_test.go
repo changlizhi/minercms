@@ -44,7 +44,7 @@ func TestCreateYongHu(t *testing.T){
 			map[string]interface{}{
 				consts.BianMa:   consts.YouXiang,
 				consts.LeiXing:  consts.VARCHAR,
-				consts.ChangDu:  "50",
+				consts.ChangDu:  "150",
 				consts.MoRenZhi: "'feitian'",
 			},
 			map[string]interface{}{
@@ -61,6 +61,12 @@ func TestCreateYongHu(t *testing.T){
 			},
 			map[string]interface{}{
 				consts.BianMa:   consts.JueSeIdYongHu,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "50",
+				consts.MoRenZhi: "'feitian'",
+			},
+			map[string]interface{}{
+				consts.BianMa:   consts.ZhuCeShiJian,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
 				consts.MoRenZhi: "'feitian'",

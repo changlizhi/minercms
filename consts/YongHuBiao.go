@@ -14,4 +14,5 @@ const(
 	DengLuMiMa="DengLuMiMa"
 	ZhiFuMiMa="ZhiFuMiMa"
 	JueSeIdYongHu="JueSeIdYongHu"
+	ZhuCeShiJian="ZhuCeShiJian"
 )
