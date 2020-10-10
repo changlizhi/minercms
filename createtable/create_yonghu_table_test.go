@@ -1,16 +1,16 @@
 package createtable
 
 import (
+	"log"
 	"minercms/consts"
 	"minercms/daos"
-	"minercms/log"
 	"testing"
 )
 
 func TestCreateYongHu(t *testing.T){
 	db := daos.HuoQuLianJieChi()
 
-	log.Info.Println("db-----", db)
+	log.Println("db-----", db)
 	canShu := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
 		consts.ShuJuBiao: consts.YongHus,
