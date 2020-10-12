@@ -32,15 +32,15 @@ func TestTianChong(t *testing.T){
 func FindJueSes()map[string]interface{}{
 	canShu:=map[string]interface{}{
 		consts.ShuJuKu: consts.MINERCMS,
-		consts.ShuJuBiao: consts.JueSes,
+		consts.ShuJuBiao: consts.YongHus,
 		consts.ShuJuZhis: map[string]interface{}{
-			consts.JueSeId: consts.JueSeId,
-			consts.JueSeBianMa: consts.JueSeBianMa,
-			consts.JueSeMingCheng: consts.JueSeMingCheng,
+			consts.YongHuId: consts.YongHuId,
+			//consts.JueSeBianMa: consts.JueSeBianMa,
+		//	consts.JueSeMingCheng: consts.JueSeMingCheng,
 		},
 		consts.TiaoJians: map[string]interface{}{
 			consts.DangQianYe: "1",
-			consts.MeiYeTiaoShu: "3",
+			consts.MeiYeTiaoShu: "2",
 		},
 	}
 	ret := daos.FindData(canShu)
@@ -51,7 +51,12 @@ func TestJueSeFind(t *testing.T){
 
 	js:=FindJueSes()
 	js0:=js[consts.ShuJu].([]map[string]interface{})
+
+	//UserId:=js0[1]
+	//fmt.Println("用户ID的信息=",UserId)
 	log.Println(js0,"----js0")
+
+
 }
 func TestInsertYongHu(t *testing.T){
 

@@ -24,6 +24,10 @@ func TestInsertEarningData(t *testing.T) {
 
 		// 获取时间
 		nowTime:=utils.TimeNow()
+		FindUserId()
+
+
+
 
 		insertNeedCanShu := map[string]interface{}{
 			consts.ShuJuKu:   consts.MINERCMS,
@@ -43,4 +47,21 @@ func TestInsertEarningData(t *testing.T) {
 	}
 
 
+}
+func FindUserId()map[string]interface{}{
+	canShu:=map[string]interface{}{
+		consts.ShuJuKu: consts.MINERCMS,
+		consts.ShuJuBiao: consts.YongHus,
+		consts.ShuJuZhis: map[string]interface{}{
+			consts.YongHuId: consts.YongHuId,
+			//consts.JueSeBianMa: consts.JueSeBianMa,
+			//	consts.JueSeMingCheng: consts.JueSeMingCheng,
+		},
+		consts.TiaoJians: map[string]interface{}{
+			consts.DangQianYe: "1",
+			consts.MeiYeTiaoShu: "2",
+		},
+	}
+	ret := daos.FindData(canShu)
+	return ret
 }
