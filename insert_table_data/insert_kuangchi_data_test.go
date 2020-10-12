@@ -9,8 +9,10 @@ import (
 	"strconv"
 	"testing"
 )
+func Find3MinerType(){
 
-func TestInsertCaiDan(t *testing.T){
+}
+func TestInsertKuangChi(t *testing.T){
 	js:= Find3JueSes()
 	jss:=js[consts.ShuJu].([]map[string]interface{})
 	js0:=jss[0]

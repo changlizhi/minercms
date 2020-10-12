@@ -29,7 +29,7 @@ func TestTianChong(t *testing.T){
 	}
 }
 
-func FindJueSes()map[string]interface{}{
+func Find3JueSes()map[string]interface{}{
 	canShu:=map[string]interface{}{
 		consts.ShuJuKu: consts.MINERCMS,
 		consts.ShuJuBiao: consts.JueSes,
@@ -66,14 +66,14 @@ func TestMod(t *testing.T){
 }
 func TestJueSeFind(t *testing.T){
 
-	js:=FindJueSes()
+	js:= Find3JueSes()
 	jss:=js[consts.ShuJu].([]map[string]interface{})
 	log.Println(jss[0],"----jss[0]")
 	log.Println(jss[1],"----jss[1]")
 	log.Println(jss[2],"----jss[2]")
 }
 func TestInsertYongHu(t *testing.T){
-	js:=FindJueSes()
+	js:= Find3JueSes()
 	jss:=js[consts.ShuJu].([]map[string]interface{})
 	js0:=jss[0]
 	js1:=jss[1]
