@@ -70,6 +70,7 @@ func QueryOneNews(canShu map[string]interface{}) map[string]interface{} {
 }
 func QueryOnePageDtaNews(canShu map[string]interface{}) map[string]interface{} {
 	id := utils.HuoQuZiFuZhi(canShu[consts.Id])
+
 	needCanShu := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
 		consts.ShuJuBiao: consts.PageData,

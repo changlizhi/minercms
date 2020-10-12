@@ -4,6 +4,6 @@ import "minercms/daosnews"
 
 
 func GetPageDataQueryNewsService(canShu map[string]interface{}) map[string]interface{} {
-	ret := daosnews.QueryOnePageDtaNews(canShu)
+	ret := daosnews.PageDataQueryNewsList(canShu)
 	return ret
 }

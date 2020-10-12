@@ -47,3 +47,10 @@ func Time2StringNyrWu(t time.Time) string {
 	ret := Time2String(t, consts.NyrWu)
 	return ret
 }
+
+
+func TimeNow() string{
+	startTimestamp := time.Now().Unix()  //获得时间戳
+	StartTimeStr := time.Unix(startTimestamp, 0).Format("2006-01-02 15:04:05")
+	return StartTimeStr
+}

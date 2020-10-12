@@ -28,7 +28,7 @@ func chuShiHuaChi() {
 }
 
 func chuangJianChi(shuJuKuMing string) *sql.DB {
-	lianJieChi, err := sql.Open("mysql", "root:123456@tcp(127.0.0.1:3306)/"+shuJuKuMing) //进入mysql数据库，然后
+	lianJieChi, err := sql.Open("mysql", "root:123456@tcp(192.168.1.111:3306)/"+shuJuKuMing) //进入mysql数据库，然后
 	if err != nil {
 		log.Println("建立链接失败", err)
 		os.Exit(1)
