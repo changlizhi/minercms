@@ -15,9 +15,9 @@ func Find3MinerTypes()map[string]interface{}{
 		consts.ShuJuKu: consts.MINERCMS,
 		consts.ShuJuBiao: consts.MinerTypes,
 		consts.ShuJuZhis: map[string]interface{}{
-			consts.TypeId: consts.TypeId,
-			consts.TypeName: consts.TypeName,
-			consts.TypeEncode: consts.TypeEncode,
+			consts.MinerTypeId: consts.MinerTypeId,
+			consts.TypeName:    consts.TypeName,
+			consts.TypeEncode:  consts.TypeEncode,
 		},
 		consts.TiaoJians: map[string]interface{}{
 			consts.DangQianYe: "1",
@@ -32,12 +32,12 @@ func TestFind3MinerTypes(t *testing.T){
 log.Println("ret---",ret)
 }
 func TestInsertKuangChi(t *testing.T){
-	js:= Find3JueSes()
-	jss:=js[consts.ShuJu].([]map[string]interface{})
-	js0:=jss[0]
-	js1:=jss[1]
-	js2:=jss[2]
-	jueSeId:=""
+	ts:= Find3MinerTypes()
+	tss:=ts[consts.ShuJu].([]map[string]interface{})
+	ts0:=tss[0]
+	ts1:=tss[1]
+	ts2:=tss[2]
+	useId:=""
 	for i:=0;i<20;i++{
 		id := utils.HuoQuIdZiFu()
 		i2str:=strconv.Itoa(i)
@@ -46,24 +46,20 @@ func TestInsertKuangChi(t *testing.T){
 			i2str=tianChong0str(i2str,3-leni)
 		}
 		if i%3==0{
-			jueSeId=js2[consts.JueSeId].(string)
-			log.Println("jueSeId---i%3==0",jueSeId)
+			useId=ts2[consts.MinerTypeId].(string)
 		}else if i %2==0{
-			jueSeId=js1[consts.JueSeId].(string)
-			log.Println("jueSeId---i%2==0",jueSeId)
+			useId=ts1[consts.MinerTypeId].(string)
 		}else if i %1==0{
-			jueSeId=js0[consts.JueSeId].(string)
-			log.Println("jueSeId---i%1==0",jueSeId)
+			useId=ts0[consts.MinerTypeId].(string)
 		}
 		insertNeedCanShu := map[string]interface{}{
 			consts.ShuJuKu:   consts.MINERCMS,
-			consts.ShuJuBiao: consts.CaiDans,
+			consts.ShuJuBiao: consts.KuangChis,
 			consts.ShuJuZhis: map[string]interface{}{
-				consts.CaiDanId: id,
-				consts.CaiDanBianMa: "1112222"+i2str,
-				consts.CaiDanMingCheng: "YongHuBianMa"+i2str,
-				consts.CaiDanUrl: "http://starriver.com/"+i2str,
-				consts.JueSeIdCaiDan: jueSeId,
+				consts.KuangChiId: id,
+				consts.KuangChiBianHao: "bianhao"+i2str,
+				consts.KuangJiMingCheng: "http://starriver.com/"+i2str,
+				consts.KuangJiLeiXing: useId,
 			},
 		}
 

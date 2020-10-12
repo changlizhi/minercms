@@ -24,14 +24,14 @@ func TestMysqlTypeTable(t *testing.T) {
 			consts.ShuJuKu:   consts.MINERCMS,
 			consts.ShuJuBiao: consts.MinerTypes,
 			consts.ShuJuZhis: map[string]interface{}{
-				consts.TypeId: id,
-				consts.TypeEncode: "leixing"+mid,
-				consts.Mainboard: "supermicro"+mid,
-				consts.TypeName: "leixing_CN"+mid,
-				consts.GPU: "NVIDIA"+mid,
-				consts.CPU: "AMD"+mid,
-				consts.SSD:mid+"TiB",
-				consts.HDD:mid+"0TiB",
+				consts.MinerTypeId: id,
+				consts.TypeEncode:  "leixing"+mid,
+				consts.Mainboard:   "supermicro"+mid,
+				consts.TypeName:    "leixing_CN"+mid,
+				consts.GPU:         "NVIDIA"+mid,
+				consts.CPU:         "AMD"+mid,
+				consts.SSD:         mid+"TiB",
+				consts.HDD:         mid+"0TiB",
 			},
 		}
 		ret := daos.InsertData(insertNeedCanShu)

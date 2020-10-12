@@ -18,11 +18,11 @@ func TestMysqlTypeTable(t *testing.T) {
 	datapower := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
 		consts.ShuJuBiao: consts.MinerTypes,
-		consts.ZhuJian:   consts.TypeId,
+		consts.ZhuJian:   consts.MinerTypeId,
 		consts.SuoYin:    consts.TypeEncode,
 		consts.ZiDuans: []interface{}{
 			map[string]interface{}{
-				consts.BianMa:   consts.TypeId,
+				consts.BianMa:   consts.MinerTypeId,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
 				consts.MoRenZhi: "'星河飞天'",
