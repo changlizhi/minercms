@@ -51,7 +51,7 @@ func TestJueSeFind(t *testing.T){
 
 	js:=FindJueSes()
 	js0:=js[consts.ShuJu].([]map[string]interface{})
-	log.Println(js0,"----js0")
+	log.Println(js0[0],"----js0")
 }
 func TestInsertYongHu(t *testing.T){
 
