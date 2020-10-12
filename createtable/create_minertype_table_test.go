@@ -18,26 +18,26 @@ func TestMysqlTypeTable(t *testing.T) {
 	datapower := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
 		consts.ShuJuBiao: consts.MinerTypes,
-		consts.ZhuJian:   consts.Id,
-		consts.SuoYin:    "",
+		consts.ZhuJian:   consts.TypeId,
+		consts.SuoYin:    consts.TypeEncode,
 		consts.ZiDuans: []interface{}{
 			map[string]interface{}{
-				consts.BianMa:   consts.Id,
+				consts.BianMa:   consts.TypeId,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
-				consts.MoRenZhi: "'星河飞天'",
-			},
-			map[string]interface{}{
-				consts.BianMa:   consts.TypeKinds,
-				consts.LeiXing:  consts.VARCHAR,
-				consts.ChangDu:  "100",
 				consts.MoRenZhi: "'星河飞天'",
 			},
 			map[string]interface{}{
 				consts.BianMa:   consts.TypeEncode,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
-				consts.MoRenZhi: "'IPFS-Earnings'",
+				consts.MoRenZhi: "'leixing1'",
+			},
+			map[string]interface{}{
+				consts.BianMa:   consts.Mainboard,
+				consts.LeiXing:  consts.VARCHAR,
+				consts.ChangDu:  "100",
+				consts.MoRenZhi: "'Supermicro'",
 			},
 			map[string]interface{}{
 				consts.BianMa:   consts.TypeName,

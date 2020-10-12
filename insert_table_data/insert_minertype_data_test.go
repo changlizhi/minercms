@@ -14,26 +14,24 @@ func TestMysqlTypeTable(t *testing.T) {
 
 
 
-	for i:=0;i<10;i++{
+	for i:=1;i<=10;i++{
 		log.Printf("=== 开始插入   第 %d 条  数据 ====\n",i)
 		id := utils.HuoQuIdZiFu()
 		str:=strconv.Itoa(i)
 
 		mid := str
-		mname := "lily_"+str
-		mtype := "yellow_"+str
-
 		insertNeedCanShu := map[string]interface{}{
 			consts.ShuJuKu:   consts.MINERCMS,
-			consts.ShuJuBiao: consts.Power,
+			consts.ShuJuBiao: consts.MinerTypes,
 			consts.ShuJuZhis: map[string]interface{}{
-				consts.Id: id,
-
-				consts.MachineId:   mid,
-				consts.MachineName: mname,
-				consts.MachineType: mtype,
-				//	consts.ShiJian:     shiJian,
-				//	consts.GengXin:     gengXin,
+				consts.TypeId: id,
+				consts.TypeEncode: "leixing"+mid,
+				consts.Mainboard: "supermicro"+mid,
+				consts.TypeName: "leixing_CN"+mid,
+				consts.GPU: "NVIDIA"+mid,
+				consts.CPU: "AMD"+mid,
+				consts.SSD:mid+"TiB",
+				consts.HDD:mid+"0TiB",
 			},
 		}
 		ret := daos.InsertData(insertNeedCanShu)
