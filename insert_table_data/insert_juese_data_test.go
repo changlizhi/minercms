@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-func TestInsertCaiDan(t *testing.T){
+func TestInsertJueSe(t *testing.T){
 	for i:=0;i<20;i++{
 		id := utils.HuoQuIdZiFu()
 		i2str:=strconv.Itoa(i)

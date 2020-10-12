@@ -46,23 +46,55 @@ func FindJueSes()map[string]interface{}{
 	ret := daos.FindData(canShu)
 	return ret
 }
+func TestMod(t *testing.T){
+	str := "12"
+	for i := 0;i< 1000;i ++{
+		if i%3==0{
+			str = "3"
+			//log.Println("i%100==0",i)
+		}else if i%2==0{
+			str = "2"
+			//log.Println("i%100==0",i)
 
+		}else {
+			log.Println("i%101==0",i)
+			str = "1"
+
+		}
+		log.Println("str---",str)
+	}
+}
 func TestJueSeFind(t *testing.T){
 
 	js:=FindJueSes()
-	js0:=js[consts.ShuJu].([]map[string]interface{})
-	log.Println(js0[0],"----js0")
+	jss:=js[consts.ShuJu].([]map[string]interface{})
+	log.Println(jss[0],"----jss[0]")
+	log.Println(jss[1],"----jss[1]")
+	log.Println(jss[2],"----jss[2]")
 }
 func TestInsertYongHu(t *testing.T){
-
 	js:=FindJueSes()
-	log.Println(js,"----js")
-	for i:=0;i<1000;i++{
+	jss:=js[consts.ShuJu].([]map[string]interface{})
+	js0:=jss[0]
+	js1:=jss[1]
+	js2:=jss[2]
+	jueSeId:=""
+	for i:=0;i<900;i++{
 		id := utils.HuoQuIdZiFu()
 		i2str:=strconv.Itoa(i)
 		leni:=len(i2str)
 		if leni < 3{
 			i2str=tianChong0str(i2str,3-leni)
+		}
+		if i%3==0{
+			jueSeId=js2[consts.JueSeId].(string)
+			log.Println("jueSeId---i%3==0",jueSeId)
+		}else if i %2==0{
+			jueSeId=js1[consts.JueSeId].(string)
+			log.Println("jueSeId---i%2==0",jueSeId)
+		}else if i %1==0{
+			jueSeId=js0[consts.JueSeId].(string)
+			log.Println("jueSeId---i%1==0",jueSeId)
 		}
 		insertNeedCanShu := map[string]interface{}{
 			consts.ShuJuKu:   consts.MINERCMS,
@@ -75,10 +107,11 @@ func TestInsertYongHu(t *testing.T){
 				consts.YouXiang: i2str+"@riverstr.com",
 				consts.DengLuMiMa: "YongHuBianMa"+i2str,
 				consts.ZhiFuMiMa: "YongHuBianMa"+i2str,
-				consts.JueSeIdYongHu: "YongHuBianMa"+i2str,
+				consts.JueSeIdYongHu: jueSeId,
 				consts.ZhuCeShiJian: "YongHuBianMa"+i2str,
 			},
 		}
+
 		ret := daos.InsertData(insertNeedCanShu)
 		fmt.Println("ret=", ret)
 		log.Printf("=== 插入   第 %d 条  数据  完成====\n",i)
