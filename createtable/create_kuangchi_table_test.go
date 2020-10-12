@@ -36,7 +36,7 @@ func TestCreateKuangChi(t *testing.T){
 				consts.MoRenZhi: "'feitian'",
 			},
 			map[string]interface{}{
-				consts.BianMa:   consts.KuangJiLeiXing,
+				consts.BianMa:   consts.MinerTypeIdKuangJi,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
 				consts.MoRenZhi: "'feitian'",

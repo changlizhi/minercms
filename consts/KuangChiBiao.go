@@ -4,8 +4,8 @@ const(
 	KuangChis="KuangChis"
 )
 const(
-	KuangChiId="KuangChiId"
-	KuangChiBianHao="KuangChiBianHao"
-	KuangJiMingCheng="KuangJiMingCheng"
-	KuangJiLeiXing="KuangJiLeiXing"
+	KuangChiId         ="KuangChiId"
+	KuangChiBianHao    ="KuangChiBianHao"
+	KuangJiMingCheng   ="KuangJiMingCheng"
+	MinerTypeIdKuangJi ="MinerTypeIdKuangJi"
 )

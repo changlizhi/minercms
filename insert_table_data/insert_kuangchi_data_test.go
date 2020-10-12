@@ -56,10 +56,10 @@ func TestInsertKuangChi(t *testing.T){
 			consts.ShuJuKu:   consts.MINERCMS,
 			consts.ShuJuBiao: consts.KuangChis,
 			consts.ShuJuZhis: map[string]interface{}{
-				consts.KuangChiId: id,
-				consts.KuangChiBianHao: "bianhao"+i2str,
-				consts.KuangJiMingCheng: "http://starriver.com/"+i2str,
-				consts.KuangJiLeiXing: useId,
+				consts.KuangChiId:         id,
+				consts.KuangChiBianHao:    "bianhao"+i2str,
+				consts.KuangJiMingCheng:   "矿机"+i2str,
+				consts.MinerTypeIdKuangJi: useId,
 			},
 		}
 
