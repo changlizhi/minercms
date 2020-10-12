@@ -16,7 +16,7 @@ func TestMysqlPowerTable(t *testing.T) {
 	log.Println("=== 开始创建算力表 ===")
 	datapower := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
-		consts.ShuJuBiao: consts.Power,
+		consts.ShuJuBiao: consts.ComputPower,
 		consts.ZhuJian:   consts.Id,
 		consts.SuoYin:    "",
 		consts.ZiDuans: []interface{}{
@@ -27,19 +27,19 @@ func TestMysqlPowerTable(t *testing.T) {
 				consts.MoRenZhi: "'星河飞天'",
 			},
 			map[string]interface{}{
-				consts.BianMa:   consts.MachineId,
+				consts.BianMa:   consts.ComputPowerId,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "100",
 				consts.MoRenZhi: "'星河飞天'",
 			},
 			map[string]interface{}{
-				consts.BianMa:   consts.MachineName,
+				consts.BianMa:   consts.ComputPowerCode,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "50",
 				consts.MoRenZhi: "'IPFS-Earnings'",
 			},
 			map[string]interface{}{
-				consts.BianMa:   consts.MachineType,
+				consts.BianMa:   consts.ComputPowerValue,
 				consts.LeiXing:  consts.VARCHAR,
 				consts.ChangDu:  "20",
 				consts.MoRenZhi: "'星河飞天'",
