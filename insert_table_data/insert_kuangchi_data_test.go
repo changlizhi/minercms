@@ -9,8 +9,27 @@ import (
 	"strconv"
 	"testing"
 )
-func Find3MinerType(){
 
+func Find3MinerTypes()map[string]interface{}{
+	canShu:=map[string]interface{}{
+		consts.ShuJuKu: consts.MINERCMS,
+		consts.ShuJuBiao: consts.MinerTypes,
+		consts.ShuJuZhis: map[string]interface{}{
+			consts.TypeId: consts.TypeId,
+			consts.TypeName: consts.TypeName,
+			consts.TypeEncode: consts.TypeEncode,
+		},
+		consts.TiaoJians: map[string]interface{}{
+			consts.DangQianYe: "1",
+			consts.MeiYeTiaoShu: "3",
+		},
+	}
+	ret := daos.FindData(canShu)
+	return ret
+}
+func TestFind3MinerTypes(t *testing.T){
+	ret :=Find3MinerTypes()
+log.Println("ret---",ret)
 }
 func TestInsertKuangChi(t *testing.T){
 	js:= Find3JueSes()

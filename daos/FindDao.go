@@ -78,18 +78,22 @@ func FindData(canShu map[string]interface{}) map[string]interface{} {
 	db := HuoQuLianJieChi()
 	allValues := tvalues
 	result, err := db.Query(sqlStr, allValues...)
-	retShuJu := scanRet(colNames, result)
-	//如果err不为空则把err封装丢出去，如果为空则把数据原样返回
 	ret := map[string]interface{}{}
-	if err != nil {
+	if err != nil{
 		ret[consts.ZhuangTai] = consts.ShiBai
 		ret[consts.ShuoMing] = "失败：" + err.Error()
-
-	} else {
-		ret[consts.ZhuangTai] = consts.ChengGong
-		ret[consts.ShuoMing] = consts.ChengGongCN
-		ret[consts.ShuJu] = retShuJu
+		return ret
 	}
+	if result == nil{
+		ret[consts.ZhuangTai] = consts.ShiBai
+		ret[consts.ShuoMing] = "失败：result为空"
+		return ret
+	}
+	retShuJu := scanRet(colNames, result)
+	//如果err不为空则把err封装丢出去，如果为空则把数据原样返回
+	ret[consts.ZhuangTai] = consts.ChengGong
+	ret[consts.ShuoMing] = consts.ChengGongCN
+	ret[consts.ShuJu] = retShuJu
 
 	log.Println("XiuGai:sqlStr,allvalues,result,err,ret---", sqlStr, allValues, result, err, ret)
 	return ret
