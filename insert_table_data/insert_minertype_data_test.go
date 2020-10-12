@@ -14,7 +14,7 @@ func TestMysqlTypeTable(t *testing.T) {
 
 
 
-	for i:=0;i<1000;i++{
+	for i:=0;i<10;i++{
 		log.Printf("=== 开始插入   第 %d 条  数据 ====\n",i)
 		id := utils.HuoQuIdZiFu()
 		str:=strconv.Itoa(i)

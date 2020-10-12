@@ -4,7 +4,7 @@ package consts
 //Types table
 //收益表
 const (
-	Types = "Types"
+	MinerTypes = "MinerTypes"
 )
 
 const (

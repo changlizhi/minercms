@@ -17,7 +17,7 @@ func TestMysqlTypeTable(t *testing.T) {
 	log.Println("=== 开始创建类型表 ===")
 	datapower := map[string]interface{}{
 		consts.ShuJuKu:   consts.MINERCMS,
-		consts.ShuJuBiao: consts.Types,
+		consts.ShuJuBiao: consts.MinerTypes,
 		consts.ZhuJian:   consts.Id,
 		consts.SuoYin:    "",
 		consts.ZiDuans: []interface{}{
